@@ -22,12 +22,13 @@ export const RightMenu = styled.ul`
 export const NavLink = styled(Link)`
   text-decoration: none;
   font-weight: 600;
-  font-size: 2rem;
-  color: #000000;
-  padding: 0 10px;
+  font-size: 1.2rem;
+  color: #060d47;
+  padding: 0 30px;
 `;
 
 export const StyledLogo = styled(NavLink)`
+  font-size: 2rem;
   background-size: 100%;
   background-image: linear-gradient(
     45deg,

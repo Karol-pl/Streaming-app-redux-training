@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchStreams } from "../../actions";
-import { StyledButtonSmall } from "../../style/Button.style";
+import { fetchStreams, editStream } from "../../actions";
 import {
   Title,
   ListContainer,
@@ -9,6 +8,7 @@ import {
   ContentContainer,
   ButtonsContainer,
   StyledLink,
+  StyledLinkSmall,
 } from "../../style/StreamList.style";
 
 class StreamList extends Component {
@@ -20,8 +20,12 @@ class StreamList extends Component {
     if (this.props.currentUserId === stream.userId) {
       return (
         <ButtonsContainer>
-          <StyledButtonSmall>Edit</StyledButtonSmall>
-          <StyledButtonSmall>Delete</StyledButtonSmall>
+          <StyledLinkSmall to={`/streams/edit/${stream.id}`}>
+            Edit
+          </StyledLinkSmall>
+          <StyledLinkSmall to={`/streams/delete/${stream.id}`}>
+            Delete
+          </StyledLinkSmall>
         </ButtonsContainer>
       );
     }
@@ -74,4 +78,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchStreams })(StreamList);
+export default connect(mapStateToProps, { fetchStreams, editStream })(
+  StreamList
+);

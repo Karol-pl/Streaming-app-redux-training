@@ -15,6 +15,8 @@ export const FieldContainer = styled.div`
   }
 
   & input {
+    width: 100%;
+    text-align: center;
     padding: 5px 70px;
     border: none;
     border-bottom: 1px solid #060d47;

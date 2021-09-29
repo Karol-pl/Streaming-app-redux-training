@@ -2,12 +2,13 @@ Video streaming app made using:
 
 - React
 - React-router
+- Google Auth
 - Redux
 - JSON Server
 - Node media server package - to run a server for videos (!)
 - Styled-Components
 
-To run this app you need to use JSON server (to store data about streams) + media server (to be able to create connection for streaming)
+To run this app you need to use JSON server (to store data about streams) + media server (to be able to create connection for streaming) - which I didn't attach.
 
 # Getting Started with Create React App
 

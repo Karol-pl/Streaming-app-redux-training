@@ -104,3 +104,8 @@ export const StyledLinkSmall = styled(Link)`
     color: #ffffff;
   }
 `;
+
+export const Header = styled(Link)`
+  text-decoration: none;
+  color: #060d47;
+`;

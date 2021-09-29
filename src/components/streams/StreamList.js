@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchStreams, editStream } from "../../actions";
 import {
   Title,
+  Header,
   ListContainer,
   ListItemContainer,
   ContentContainer,
@@ -37,7 +38,9 @@ class StreamList extends Component {
         <ListItemContainer key={stream.id}>
           <ContentContainer>
             <div>
-              <h3>{stream.title}</h3>
+              <Header to={`/streams/${stream.id}`}>
+                <h3>{stream.title}</h3>
+              </Header>
             </div>
             <div>
               <p>{stream.description}</p>

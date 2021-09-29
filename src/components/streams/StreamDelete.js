@@ -1,19 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Modal from "../Modal";
+import { StyledLinkSmall } from "../../style/StreamList.style";
 import { StyledButtonSmall } from "../../style/Button.style";
 import history from "../../history";
-import { fetchStream } from "../../actions";
+import { fetchStream, deleteStream } from "../../actions";
 
 class StreamDelete extends Component {
   componentDidMount() {
     this.props.fetchStream(this.props.match.params.id);
   }
   renderActions() {
+    const { id } = this.props.match.params;
     return (
       <>
-        <StyledButtonSmall>Delete</StyledButtonSmall>
-        <StyledButtonSmall>Cancel</StyledButtonSmall>
+        <StyledButtonSmall onClick={() => this.props.deleteStream(id)}>
+          Delete
+        </StyledButtonSmall>
+        <StyledLinkSmall to="/">Cancel</StyledLinkSmall>
       </>
     );
   }
@@ -37,7 +41,11 @@ class StreamDelete extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return { stream: state.streams[ownProps.match.params.id] };
+  return {
+    stream: state.streams[ownProps.match.params.id],
+  };
 };
 
-export default connect(mapStateToProps, { fetchStream })(StreamDelete);
+export default connect(mapStateToProps, { fetchStream, deleteStream })(
+  StreamDelete
+);
